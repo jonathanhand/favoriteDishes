@@ -20,4 +20,9 @@ export class DishesService {
   getFavoriteDish() {
     return this.favoriteDishes.slice();
   }
+  isDishFavorite(dish: Dishes) {
+    return this.favoriteDishes.find((dishE1: Dishes) => {
+      return dishE1.id === dish.id;
+    });
+  }
 }

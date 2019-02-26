@@ -7,12 +7,22 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list *ngFor= "let dish of dishes">
-      <ion-item>
+  <ion-list>
+    <ion-item-sliding *ngFor= "let dish of dishes">
+      <ion-item (click)="onViewDish(dish)">
         <ion-label>
           <h2>{{ dish.item}}</h2>
           <p>{{ dish.desc }}</p>
         </ion-label>
       </ion-item>
-    </ion-list>>
+      <ion-item-options>
+        <ion-item-option 
+          (click)="onRemoveFromFavorite(dish)"
+          color="danger">
+          <ion-icon name = "trash"></ion-icon>
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

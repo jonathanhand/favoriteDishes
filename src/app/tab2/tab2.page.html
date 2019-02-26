@@ -27,8 +27,15 @@
           <ion-button
             fill="clear"
             size="small"
-            (click) = "onAddToFavorite(dishDetail)">Favorite</ion-button>
-        </ion-col>
+            (click) = "onAddToFavorite(dishDetail)"
+            *ngIf="!isFavorite(dishDetail)">Favorite</ion-button>
+            <ion-button
+            fill="clear"
+            size="small"
+            color="danger"
+            (click) = "onRemoveFromFavorites(dishDetail)"
+            *ngIf="isFavorite(dishDetail)">Unfavorite</ion-button>
+          </ion-col>
       </ion-row>
     </ion-card>
   </ion-list>

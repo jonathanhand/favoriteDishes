@@ -39,4 +39,10 @@ export class Tab2Page implements OnInit {
     });
     await alert.present();
   }
+  onRemoveFromFavorites(dish: Dishes) {
+    this.dishService.removeDishFromFavorite(dish);
+  }
+  isFavorite(dish: Dishes) {
+    return this.dishService.isDishFavorite(dish);
+  }
 }
